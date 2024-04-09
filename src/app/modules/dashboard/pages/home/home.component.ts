@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {FormsModule} from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -11,8 +11,28 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  checked = false;
-  indeterminate = false;
-  labelPosition: 'before' | 'after' = 'after';
-  disabled = false;
+  colorPallet: string[] = ['primary', 'secondary', 'tertiary', 'accent', 'warn']
+  Data: any = {
+    statistics: [
+      {
+        "title": "Current MRR",
+        "value": "$12.4k"
+      },
+      {
+        "title": "Current Customers",
+        "value": 16601
+      },
+      {
+        "title": "Active Customers",
+        "value": "33%"
+      },
+      {
+        "title": "Churn Rate",
+        "value": "2%"
+      }
+    ],
+  }
+
+
+
 }

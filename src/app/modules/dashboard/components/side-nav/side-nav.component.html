@@ -1,24 +1,38 @@
-<nav class='tw-h-full tw-flex'>
+<nav class='tw-h-full tw-overflow-x-hidden tw-bg-tertiary dark:tw-bg-primary'>
     <mat-nav-list>
         @for (nav of navList; track nav.title) {
-        <mat-list-item role="list" class="tw-mt-2">
-            <a [routerLink]="nav.route" routerLinkActive="tw-scale-110 tw-font-medium"
-                class="nav-item tw-text-grey tw-p-3 tw-flex">
+        @switch (nav.type) {
+        @case ('link') {
+        <mat-list-item role="list" class="tw-mt-2" [routerLink]="nav.route"
+            routerLinkActive="tw-scale-110 tw-font-medium">
+            <div class="tw-p-3 tw-flex tw-text-white">
                 <mat-icon class="nav-icon">{{nav.icon}}</mat-icon>
                 <div class="nav-link tw-ml-2">{{nav.title}}</div>
-            </a>
+            </div>
         </mat-list-item>
         }
-    </mat-nav-list>
-    <!-- <mat-accordion multi>
+        @case ('parent') {
+        <mat-accordion multi class="tw-bg-transparent">
             <mat-expansion-panel class="mat-expansion-panel ">
                 <mat-expansion-panel-header class="mat-expansion-panel-header">
                     <mat-panel-title class="mat-panel-title ">
-                        <mat-icon class=" mat-icon  tw-mx-2">home</mat-icon>
-                        Self aware panel
+                        <mat-icon class=" mat-icon  tw-mx-2">{{nav.icon}}</mat-icon>
+                        {{nav.title}}
                     </mat-panel-title>
                 </mat-expansion-panel-header>
-                <p>I'm visible because I am open</p>
+                @for (nav of nav.links; track nav.title) {
+                <mat-list-item role="list" class="tw-w-full" [routerLink]="nav.route"
+                    routerLinkActive="tw-scale-100 tw-font-medium">
+                    <div class="tw-flex tw-text-white">
+                        <mat-icon class="nav-icon">{{nav.icon}}</mat-icon>
+                        <div class="nav-link tw-ml-2">{{nav.title}}</div>
+                    </div>
+                </mat-list-item>
+                }
             </mat-expansion-panel>
-        </mat-accordion> -->
+        </mat-accordion>
+        }
+        }
+        }
+    </mat-nav-list>
 </nav>

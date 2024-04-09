@@ -17,17 +17,46 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class SideNavComponent implements OnInit {
   isWeb: boolean = true;
   navList: any = [{
-    title: 'Home',
+    title: 'Dashboard',
     icon: 'dashboard',
-    route: '/dashboard/home'
+    type: 'parent',
+    links: [{
+      title: 'Home',
+      icon: 'home',
+      route: '/dashboard/home',
+      type: 'link',
+    }, {
+      title: 'Users',
+      icon: 'people',
+      route: '/dashboard/users',
+      type: 'link',
+    }, {
+      title: 'Settings',
+      icon: 'settings',
+      route: '/dashboard/settings',
+      type: 'link',
+    }],
+
   }, {
-    title: 'Users',
-    icon: 'people',
-    route: '/dashboard/users'
-  }, {
-    title: 'Settings',
-    icon: 'settings',
-    route: '/dashboard/settings'
+    title: 'Authentication',
+    icon: 'lock',
+    type: 'parent',
+    links: [{
+      title: 'Login',
+      icon: 'login',
+      route: '/login',
+      type: 'link',
+    }, {
+      title: 'Register',
+      icon: 'person-add',
+      route: '/auth/register',
+      type: 'link',
+    }, {
+      title: 'Forgot Password',
+      icon: 'lock_open',
+      route: '/auth/forgot-password',
+      type: 'link',
+    }],
   }];
   panelOpenState = false;
   constructor(public viewpoint: ViewpointService) { }

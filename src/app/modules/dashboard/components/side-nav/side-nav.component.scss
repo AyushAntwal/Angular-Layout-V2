@@ -13,4 +13,9 @@
             color: white;
         }
     }
+
+    .mat-expansion-panel-body {
+        margin: none !important;
+        padding: none !important;
+    }
 }

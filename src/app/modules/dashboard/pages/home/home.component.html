@@ -1,59 +1,15 @@
-<div class="tw-container">
-    <mat-card>Hello</mat-card>
-
-    <label for="age">Age</label>
-    <input type="checkbox" id="age" name="age" value="Red">
-    <input type="radio" name="gender" value="Red">
-
-
-    <div class="tw-flex tw-items-center tw-mb-4">
-        <input id="default-checkbox" type="checkbox" value="" class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300 tw-rounded tw-focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 tw-focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="default-checkbox" class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:text-gray-300">Default checkbox</label>
+<div class="tw-container tw-mx-auto tw-p-3 ">
+  <section class="tw-h-5s">
+    <h1 class="tw-text-2xl tw-font-bold tw-mt-4">Recent Activities</h1>
+    <div class=" tw-grid tw-grid-rows-1 tw-grid-flow-col tw-gap-2 max-sm:tw-grid-rows-4 max-md:tw-grid-rows-2">
+      @for (item of Data.statistics; track item.title; let i = $index) {
+      <div class="card tw-text-white" [class]="'tw-bg-'+colorPallet[i] ">
+        <div class="tw-p-4">
+          <p class="tw-text-sm tw-mx-3">{{item.title}}</p>
+          <h1 class="tw-text-4xl tw-m-3">{{item.value}}</h1>
+        </div>
+      </div>
+      }
     </div>
-    <div class="tw-flex tw-items-center">
-        <input checked id="checked-checkbox" type="checkbox" value="" class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300 tw-rounded tw-focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 tw-focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="checked-checkbox" class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:text-gray-300">Checked state</label>
-    </div>
-    
-    <mat-card >
-        <mat-card-content>
-          <h2 class="example-h2">Checkbox configuration</h2>
-      
-          <section  class="example-section">
-            <mat-checkbox color="secondary" class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
-            <mat-checkbox color="dark" class="example-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
-          </section>
-      
-          <section class="example-section">
-            <label class="example-margin">Align:</label>
-            <mat-radio-group color="primary" [(ngModel)]="labelPosition">
-              <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
-              <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
-            </mat-radio-group>
-          </section>
-      
-          <section  class="example-section">
-            <mat-checkbox color="secondary" class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
-          </section>
-        </mat-card-content>
-      </mat-card>
-      
-      <mat-card class="result">
-        <mat-card-content>
-          <h2 class="example-h2">Result</h2>
-      
-          <section class="example-section">
-            <mat-checkbox color="primary"
-                class="example-margin"
-                [(ngModel)]="checked"
-                [(indeterminate)]="indeterminate"
-                [labelPosition]="labelPosition"
-                [disabled]="disabled">
-              I'm a checkbox
-            </mat-checkbox>
-          </section>
-        </mat-card-content>
-      </mat-card>
-      
+  </section>
 </div>
-
