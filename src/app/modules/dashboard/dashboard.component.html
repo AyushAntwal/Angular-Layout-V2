@@ -1,0 +1,10 @@
+<app-toolbar (toggleDrawer)="sidenav.toggle()"></app-toolbar>
+<mat-sidenav-container class="sidenav-container" autosize [hasBackdrop]="!isWeb">
+    <mat-sidenav class="sideNav tw-bg-tertiary dark:tw-bg-primary" #sidenav [mode]="isWeb ? 'side' : 'over'"
+        [opened]="isWeb">
+        <app-side-nav />
+    </mat-sidenav>
+    <mat-sidenav-content class="tw-bg-light dark:tw-bg-primary/60">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

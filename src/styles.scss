@@ -1,0 +1,26 @@
+@import './assets/style/variables.scss';
+@import './assets/style/angular-theme.scss';
+@import './assets/style/custom-classes.scss';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+:root {
+    --background-color: theme('colors.secondary');
+    --text-color: theme('colors.black');
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: theme('colors.dark');
+        --text-color: theme('colors.white');
+    }
+}
+
+html,
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

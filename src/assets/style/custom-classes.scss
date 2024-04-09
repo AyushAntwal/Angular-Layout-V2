@@ -1,0 +1,47 @@
+@layer utilities {
+    .card {
+        border-radius: theme('borderRadius.md');
+        padding: theme('spacing.1');
+        box-shadow: theme('boxShadow.lg');
+        margin: theme('spacing.2') theme('spacing.1');
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    .card-title {
+        font-size: theme('fontSize.2xl');
+        font-weight: theme('fontWeight.bold');
+    }
+
+    .card-subtitle {
+        font-size: theme('fontSize.lg');
+        font-weight: theme('fontWeight.semibold');
+    }
+
+    .card-content {
+        font-size: theme('fontSize.base');
+        font-weight: theme('fontWeight.normal');
+    }
+
+    .card-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: theme('spacing.1');
+        border-radius: theme('borderRadius.md');
+        background-color: theme('colors.primary');
+        color: theme('colors.white');
+        font-size: theme('fontSize.base');
+        font-weight: theme('fontWeight.bold');
+        cursor: pointer;
+    }
+
+    .card-action:hover {
+        background-color: theme('colors.secondary');
+    }
+
+    .card-action:active {
+        background-color: theme('colors.tertiary');
+    }
+
+}

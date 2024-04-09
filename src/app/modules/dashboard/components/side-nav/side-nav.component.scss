@@ -1,0 +1,16 @@
+.mat-expansion-panel {
+    background-color: transparent;
+    color: white;
+    border: none !important;
+    box-shadow: none !important;
+
+    .mat-expansion-panel-header {
+        .mat-panel-title {
+            color: white;
+        }
+
+        mat-icon {
+            color: white;
+        }
+    }
+}
